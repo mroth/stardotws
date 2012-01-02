@@ -1,5 +1,6 @@
 source :rubygems
 gem 'rack'
+gem 'thin'
 #gem 'rack-coffee'
 
 gem 'rack-asset-compiler'
