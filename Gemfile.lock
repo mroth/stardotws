@@ -1,13 +1,25 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    coffee-script (2.2.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.2.0)
+    execjs (1.2.13)
+      multi_json (~> 1.0)
+    libv8 (3.3.10.4)
+    multi_json (1.0.4)
     rack (1.4.0)
-    rack-coffee (0.9.1)
+    rack-asset-compiler (0.2.1)
       rack
+    therubyracer (0.9.9)
+      libv8 (~> 3.3.10)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  coffee-script
   rack
-  rack-coffee
+  rack-asset-compiler
+  therubyracer

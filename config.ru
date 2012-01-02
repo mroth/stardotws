@@ -1,4 +1,5 @@
-require 'rack/coffee'
+# require 'rack/coffee'
+require 'rack/coffee_compiler'
 
 $stdout.sync = true
 
@@ -18,7 +19,13 @@ run lambda { |env|
   ]
 }
 
-use Rack::Coffee, {
-    :root => 'public',
-    :urls => '/javascripts'
+# use Rack::Coffee, {
+#     :root => 'public',
+#     :urls => '/javascripts'
+# }
+
+use Rack::CoffeeCompiler, {
+  :source_dir => 'public/coffeescripts',
+  :url => '/javascripts',
+  :alert_on_error => true  # Generates a window.alert on compile error.  Defaults to (RACK_ENV! = 'production')
 }
