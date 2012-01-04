@@ -1,4 +1,3 @@
-# require 'rack/coffee'
 require 'rack/coffee_compiler'
 
 $stdout.sync = true
