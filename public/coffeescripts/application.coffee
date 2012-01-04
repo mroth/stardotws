@@ -24,8 +24,8 @@ placeStar = (x,y) ->
 placeRandStar = ->
 	min_x = 0
 	min_y = 0
-	max_x = $('body').width() - 16
-	max_y = $('body').height() - 16
+	max_x = $('body').width() - 32
+	max_y = $('body').height() - 32
 	placeStar( rand2(min_x,max_x), rand2(min_y,max_y) )
 
 starPlacer = ->
