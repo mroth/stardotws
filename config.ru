@@ -22,11 +22,6 @@ run lambda { |env|
   ]
 }
 
-# use Rack::Coffee, {
-#     :root => 'public',
-#     :urls => '/javascripts'
-# }
-
 use Rack::CoffeeCompiler, {
   :source_dir => 'public/coffeescripts',
   :url => '/javascripts',
