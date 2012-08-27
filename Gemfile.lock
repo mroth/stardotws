@@ -11,6 +11,7 @@ GEM
       multi_json (~> 1.0)
     libv8 (3.3.10.4)
     multi_json (1.0.4)
+    newrelic_rpm (3.4.1)
     rack (1.4.0)
     rack-asset-compiler (0.2.1)
       rack
@@ -26,6 +27,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-script
+  newrelic_rpm
   rack
   rack-asset-compiler
   therubyracer

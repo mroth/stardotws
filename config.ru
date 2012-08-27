@@ -2,6 +2,10 @@ require 'rack/coffee_compiler'
 
 $stdout.sync = true
 
+configure :production do
+  require 'newrelic_rpm'  
+end
+
 use Rack::Static, {
   :urls => ["/stylesheets", "/images"],
   :root => "public"

@@ -9,3 +9,6 @@ gem 'coffee-script'
 
 # On heroku, use this gem instead of therubyracer
 #gem 'therubyracer-heroku', '0.8.1.pre3'
+group :production do
+  gem 'newrelic_rpm'
+end
