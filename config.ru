@@ -2,9 +2,7 @@ require 'rack/coffee_compiler'
 
 $stdout.sync = true
 
-configure :production do
-  require 'newrelic_rpm'  
-end
+require 'newrelic_rpm' if ENV['RACK_ENV'] == 'production'
 
 use Rack::Static, {
   :urls => ["/stylesheets", "/images"],
