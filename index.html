@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css" media="screen">		
+	html,body {
+		height: 100%;
+	}
+		
+	body {			
+		/* iPhone */
+        background-image: -webkit-gradient(radial, center center, 0, center center, 150, from(#6691D1), to(#002B6B));
+        /* Desktop */
+        background-image: -webkit-radial-gradient(circle, #6691D1, #002B6B);
+			
+        padding: 0;
+        margin: 0;
+        -webkit-text-size-adjust: none;
+	}
+		
+	.star {
+		position: absolute;
+		display: none;
+		font-size: xx-large;
+	}
+	</style>
+</head>
+<body>
+	<!-- nothing here but some stars -->
+	
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js"
+			integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+			crossorigin="anonymous"></script>
+
+	<script type="text/javascript">
+		// return a random int 0 <= f < n
+		function rand(n) {
+			return Math.floor(Math.random() * n);
+		};
+
+		// return a random int min <= f < max
+		function rand2(min, max) {
+			return min + rand(max - min);
+		};
+
+		// place a new star on the canvas at a specific point
+		function placeStar(x, y) {
+			var star = "<div class='star' style='left: " + x + "px; top: " + y + "px;'>&#127775;</div>";
+			var placedStar = $('body').append(star);
+		};
+
+		// generate a star at random coordinates and place it
+		function placeRandStar() {
+			var max_x, max_y, min_x, min_y;
+			min_x = 0;
+			min_y = 0;
+			max_x = $('body').width() - 32;
+			max_y = $('body').height() - 32;
+			placeStar(rand2(min_x, max_x), rand2(min_y, max_y));
+		};
+
+		starPlacer = function() {
+			for (var i = 1; i <= 100; i++) {
+				placeRandStar();
+			}
+		};
+
+		sparkleLoop = function() {
+			var allStars = $('.star');
+			var star = allStars[rand2(0, allStars.length - 1)];
+			$(star).fadeIn(1000);
+			setTimeout( function() {
+				$(star).fadeOut(1000);
+			}, 3000);
+			setTimeout(sparkleLoop, 200);
+		};
+
+		$(function() {
+			starPlacer();
+			sparkleLoop();
+		});
+	</script>
+</body>
+</html>

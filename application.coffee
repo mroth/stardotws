@@ -1,3 +1,5 @@
+# DEPRECATED: this file is no longer used, but is preserved here for historical reasons.
+
 #
 # return a random int 0 <= f < n
 #
@@ -16,7 +18,6 @@ rand2 = (min, max) ->
 placeStar = (x,y) ->
 	star = "<div class='star' style='left: #{x}px; top: #{y}px;'>&#127775;</div>"
 	placedStar = $('body').append(star)
-	# $('body .star:last-child').fadeOut('slow')
 
 #
 # generate a star at random coordinates and place it
