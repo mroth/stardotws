@@ -1,4 +1,4 @@
-Source for the emoji domain http://🌟.ws/
+Source for the emoji domain <a href="http://🌟.ws/">http://🌟.ws/</a>
 
 OMG EMOJI DOMAINZ!!!
 
